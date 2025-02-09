@@ -1,0 +1,18 @@
+document.getElementById("yes-btn").addEventListener("click", function() {
+    document.getElementById("bear-img").src = "happy-bear.png";
+    document.querySelector("h2").innerText = "Yay! Here's some flowers for you! 🌸🌹";
+});
+
+document.getElementById("no-btn").addEventListener("click", function() {
+    document.getElementById("bear-img").src = "sad-bear.png";
+    document.querySelector("h2").innerText = "Oh no... 💔 *sniff sniff*";
+    moveNoButton();
+});
+
+function moveNoButton() {
+    const noButton = document.getElementById("no-btn");
+    const randomX = Math.random() * (window.innerWidth - 100);
+    const randomY = Math.random() * (window.innerHeight - 50);
+    noButton.style.left = `${randomX}px`;
+    noButton.style.top = `${randomY}px`;
+}
